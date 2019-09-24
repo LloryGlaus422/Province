@@ -1,0 +1,15 @@
+body{
+    text-align: center;
+    background-color: aqua;
+  }
+  h1 {
+    color: red;
+  }
+  img{
+    width: 200px;
+    height: 200px;
+  }
+  ul {
+    list-style-type: none;
+  }
+    
