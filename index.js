@@ -26,18 +26,20 @@ app.get('/Provinces/:province', function (req, res) {
   });
 });
 
-app.get('/rate', (req, res) => {
-  res.render('rate');
-
+app.get('/rate', function (req, res) {
+  var rate = req.query.rate
+    console.log(rate)
+  req.on('data', function (data) {
+    console.log(rate)
+    var divd = 2;
+    var datax = "";
+    datax = JSON.parse(data);
+    var num = parseFloat(datax.rate);
+    var ave = (rate + num) / divd;
+    console.log(ave);
+      })
 });
 
-app.get('*', (req, res) => {
-  res.sendStatus(404);
-});
-
-app.post('/province/*', function (req, res) {
-  add.addFile(req, res);
-})
 
 
 app.listen(8080);
