@@ -1,0 +1,14 @@
+{
+  "province": "Davao",
+  "img_1": "/images/davao.jpg",
+  "img_2": "/images/davao1.jpg",
+  "img_3": "/images/davao2.jpg",
+  "population": "500000",
+  "delicacy": [
+    "Durian",
+    "Mangka",
+    "Bibingka"
+  ],
+  "history": "Although the Spaniards began to explore the Davao Gulf area as early as the 16th century, Spanish influence was negligible in the Davao region until 1844, when the Spanish Governor General of the Philippines Narciso Claveria ordered the Davao Gulf region, including what is now Davao City, to be claimed Davao City for the Spanish Crown, despite protests by the Sultan of Maguindanao. Official colonization of the area, however, began in 1848 when an expedition of 70 men and women led by José Cruz de Uyanguren of Vergara, Spain, made a landing on the estuary of the Davao River the same year, intent on colonizing the vicinity. Nearby, a settlement was situated on the banks of the river, ruled by a Muslim Bagobo chieftain named Datu Bago.",
+  "rate": 8.25
+}

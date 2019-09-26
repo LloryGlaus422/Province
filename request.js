@@ -8,10 +8,8 @@ module.exports = function (req, res, URL) {
                 if (err) throw err;
                 var stringData = data.toString();
                 var splittedData = stringData.split(",");
-                console.log(splittedData.length - 1)
                 fs.writeFile('request.txt', splittedData.length - 1, function (err) {
                     if (err) throw err;
-                    console.log(splittedData.length - 1)
                 });
             });
         }

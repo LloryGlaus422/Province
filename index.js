@@ -3,9 +3,9 @@ const request = require('./request')
 var app = express();
 var path = require('path');
 var fs = require('fs');
-const add = require('./add');
 app.set('view engine', 'pug');
 app.set('views', 'view');
+var add = require('./add')
 
 
 
@@ -27,19 +27,7 @@ app.get('/Provinces/:province', function (req, res) {
 });
 
 app.get('/rate', function (req, res) {
-  var rate = req.query.rate
-    console.log(rate)
-  req.on('data', function (data) {
-    console.log(rate)
-    var divd = 2;
-    var datax = "";
-    datax = JSON.parse(data);
-    var num = parseFloat(datax.rate);
-    var ave = (rate + num) / divd;
-    console.log(ave);
-      })
-});
-
-
+  add(req,res);
+})
 
 app.listen(8080);

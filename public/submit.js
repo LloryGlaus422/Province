@@ -1,18 +1,18 @@
 $(document).ready(function () {
-    
-    $("button").on('click', function () {
-        var rate = $(this).text()
+    $("button").click(function () {
+        var rate = $(this).text();
+        var province = $('title').text();
         $.ajax({
-            url: '/rate',
-            crossDomain: 'true',
-            data: {
-                province: $("title").text(),
-                rate: rate,
+            url: "/rate",
+            data: { rate: rate, province: province},
+            type: "GET",
+            success: function (response) {
+                $('#rate').text(response);
             },
-            success: function (data) {
-                alert(data);
+            error: function (e) {
+                console.log(e);
             }
-
         })
+        $('select').val("none");
     });
 });

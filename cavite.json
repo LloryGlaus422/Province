@@ -1,0 +1,14 @@
+{
+  "province": "Cavite",
+  "img_1": "/images/cavite2.jpg",
+  "img_2": "/images/cavite1.jpg",
+  "img_3": "/images/cavite.jpg",
+  "population": "700000",
+  "delicacy": [
+    "Kakanin",
+    "Puto",
+    "Pansit"
+  ],
+  "history": "The present Cavite City was once a mooring place for Chinese junks trading that came to trade with the settlements around Manila Bay. The land was formerly known as Tangway. Archeological evidence in coastal areas show prehistorical settlements.",
+  "rate": 3.25
+}

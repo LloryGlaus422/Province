@@ -1,37 +1,14 @@
-var fs = require('fs');
-exports.addFile = (function(req, res) {
-    var datax = "";
-    req.on('data', function(data) {
-        datax = JSON.parse(data);
-        var num = parseFloat(datax.rate);
-        var dic = "";
-        var fileName = "./province/" + datax.province  + '.json';
-        fs.readFile(fileName, function(err, provincedata) {
-            if (err) {
-                res.sendStatus(404);
-                res.end("province not found");
-            }else{
-                
-                dic = JSON.parse(provincedata);
-                var num2 = dic.rate;
-                var divd = 2;
-                if (parseFloat(dic.rate) == 0) {
-                    divd = 1;
-                }
-                var newAverageRate = (parseFloat(num2) + parseFloat(num)) / divd;
-                console.log(newAverageRate);
-                dic.rate = newAverageRate.toFixed(2);
-
-                fs.writeFile(fileName, JSON.stringify(dic, null, 2), function(err) {
-                    if (err) return console.log(err);
-            
-                    console.log('writing to ' + fileName);
-                        res.writeHead(200, { 'Content-Type': 'text/html', 'Access-Control-Allow-Origin': '*' });
-                }); 
-            }
-            
-        });
-
+module.exports = function (req, res) {
+    const fs = require("fs");
+    var rate = req.query.rate;
+    var province = req.query.province + ".json";
+    var province2 = fs.readFileSync(province);
+    var NewData = JSON.parse(province2);
+    var rating = (Number(NewData.rate) + Number(rate))
+    NewData.rate = Number(Number(NewData.rate + rating).toFixed(2))
+    var t = Number(NewData.rate)/ 2
+    fs.writeFile(province, JSON.stringify(t,null,2), function (err) {
+        if (err) throw err;
     });
-
-});
+    res.end("New Average Rate " + NewData.rate)
+}

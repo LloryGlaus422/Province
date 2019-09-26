@@ -3,7 +3,10 @@ body{
     background-color: aqua;
   }
   h1 {
-    color: red;
+    color:White;
+    margin-left: 15%;
+    margin-right:15%;
+
   }
   img{
     width: 200px;
@@ -23,5 +26,23 @@ body{
   h1{
     background-color: blue;
     border-width: 20px;
+  }
+
+  #history{
+    background-color:violet;
+    border:2px;
+    font-size: 24px;
+    color:black;
+    border-style: dashed;
+    margin-left:15%;
+    margin-right:15%;
+  }
+
+  #rate{
+    font-size: 32px;
+  }
+
+  #ul, #p1,h3{
+    font-size: 32px;
   }
     
